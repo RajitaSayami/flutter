@@ -65,7 +65,8 @@ class HomeScreen extends StatelessWidget {
               ),
            ],
          ),
-       )
+       ),
+       
        
       // Column(
       //   spacing: 30, //spacing in all component
