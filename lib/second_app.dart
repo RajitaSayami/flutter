@@ -39,14 +39,22 @@ class SecondApp extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              children: [
-                CustomBox(),
-                CustomBox(),
-                CustomBox(),
-                CustomBox(),
-              ],
-            )
+            SizedBox(height: 20,),
+             Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomBox(label: "Box1"),
+                  CustomBox(label: "Box2"),
+                  CustomBox(label: "Box3"),
+                  CustomBox(label: "Box4"),
+                  CustomBox(label: "Box5"),
+                //   CustomBox(label: "Box6"),
+                //   CustomBox(label: "Box7"),
+                //   CustomBox(label: "Box8"),
+                //   CustomBox(label: "Box9"),
+                 ],
+              ),
+          
           ],
         ),
       ),
@@ -55,7 +63,8 @@ class SecondApp extends StatelessWidget {
 }
 
 class CustomBox extends StatelessWidget {
-  const CustomBox({super.key});
+  final String label;
+  const CustomBox({required this.label, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,14 +74,10 @@ class CustomBox extends StatelessWidget {
         Container(
           height: 50,
           width: 50,
-          decoration: BoxDecoration(
-            color: Colors.grey,
-          ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text('Box 1'),
+          decoration: BoxDecoration(color: Colors.grey),
+        ),
+        SizedBox(height: 10),
+        Text(label),
       ],
     );
   }
