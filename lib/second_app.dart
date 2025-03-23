@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/image_screen.dart';
 
 class SecondApp extends StatelessWidget {
   const SecondApp({super.key});
@@ -61,6 +62,14 @@ class SecondApp extends StatelessWidget {
                 Box(),
                ],
             ),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (BuildContext context){
+                  return ImageScreen();
+                })
+                
+              );
+            }, child: Text("click me"))
           ],
         ),
       ),

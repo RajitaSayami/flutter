@@ -8,7 +8,7 @@ void main() {
   runApp(
     MaterialApp(
       title: "Fist App",
-      home:ImageScreen(),
+      home:SecondApp(),
     ),
   );
 }
