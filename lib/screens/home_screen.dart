@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/models/todo.dart';
 import 'package:todo_app/screens/add_todo_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("TODO APP"), centerTitle: true),
 
-      body: ListView.builder(
+      body: todos.isEmpty?Center(
+        child:Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset('images/welcome.svg',width: 200),
+            SizedBox(height: 20,),
+            Text("No Todos available")
+          ],
+        )): ListView.builder(
         itemCount: todos.length,
         itemBuilder: (BuildContext context, int index) {
           Todo todo = todos[index];
